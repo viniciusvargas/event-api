@@ -21,7 +21,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://accountUser:password@localhost:27017/amz-tracking-db');
+app.set('port', 8080);
+app.listen(app.get('port'));
+
+mongoose.connect('mongodb://admin:password@localhost:27017/redshoesdb');
 var db = mongoose.connection;
 
 db.on('error', function (err) {
@@ -72,3 +75,5 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+console.log('Application started on port 8080.');

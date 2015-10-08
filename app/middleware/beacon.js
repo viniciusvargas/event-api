@@ -15,7 +15,7 @@ module.exports.coreMiddleware = function (req, res, next) {
         host : 'localhost',
         port : 9090,
         path : '/amaze-mobile-api/restapi/beacon/'+uuid+'/'+major+'/'+minor,
-        method : 'GET' // do GET
+        method : 'GET'
     };
 
     var jsonResponse = '';
@@ -41,4 +41,3 @@ module.exports.coreMiddleware = function (req, res, next) {
     });
 
 };
-

@@ -8,14 +8,14 @@ var mapRoutes = function mapRoutes(app) {
 
     var test = require('../routes/test');
     var track = require('../routes/track');
-    var beacon = require('../routes/beacon');
+    var beacon = require('../routes/region');
     var interaction = require('../routes/interaction');
 
     subApp.use('/test', test);
-    subApp.use('/_track', track);
-    subApp.use('/_beacon', beacon);
-    subApp.use('/_interaction', interaction);
-    app.use('/ax-redshoes', subApp);
+    subApp.use('/track', track);
+    subApp.use('/beacon', beacon);
+    subApp.use('/interaction', interaction);
+    app.use('/eventapi', subApp);
 };
 
 module.exports.mapRoutes = mapRoutes;
